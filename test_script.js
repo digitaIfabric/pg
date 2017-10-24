@@ -22,7 +22,9 @@ client.connect((err) => {
     console.log("Searching...");
     console.log(`Found ${result.rows.length} person(s) by the name '${input}':`);
     for (let row of result.rows) {
-    console.log(`- ${row.id} : ${row.first_name} ${row.last_name} born ${row.birthdate}`);
+    let birthdate = `${row.birthdate}`;
+    let bd2 = birthdate.replace("00:00:00 GMT+0000 (UTC)", "");
+    console.log(`- ${row.id} : ${row.first_name} ${row.last_name} born ${bd2}`);
     }
 client.end();
 });
