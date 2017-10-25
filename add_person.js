@@ -1,6 +1,5 @@
-//const app = require('./lib/apps')
-//const pg = require('pg')
 const settings = require('./settings');
+//const knex = require(./knexfile');
 const first = process.argv[2];
 const last = process.argv[3];
 const dob = process.argv[4];
@@ -23,4 +22,3 @@ knex('famous_people').insert({ first_name: first , last_name: last , birthdate: 
                 console.log(rows)
             })
     });
-
